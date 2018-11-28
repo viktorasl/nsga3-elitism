@@ -7,7 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0375FB4321ADEFC9006DF4AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB4221ADEFC9006DF4AF /* main.cpp */; };
+		0375FBAF21AE75B5006DF4AF /* alg_mutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB8821AE75AF006DF4AF /* alg_mutation.cpp */; };
+		0375FBB021AE75B5006DF4AF /* alg_comparator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB8B21AE75B0006DF4AF /* alg_comparator.cpp */; };
+		0375FBB121AE75B5006DF4AF /* alg_nondominated_sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB8D21AE75B0006DF4AF /* alg_nondominated_sort.cpp */; };
+		0375FBB221AE75B5006DF4AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9121AE75B0006DF4AF /* main.cpp */; };
+		0375FBB321AE75B5006DF4AF /* exp_experiment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9421AE75B0006DF4AF /* exp_experiment.cpp */; };
+		0375FBB421AE75B5006DF4AF /* alg_individual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9721AE75B1006DF4AF /* alg_individual.cpp */; };
+		0375FBB521AE75B5006DF4AF /* problem_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9821AE75B1006DF4AF /* problem_factory.cpp */; };
+		0375FBB621AE75B5006DF4AF /* alg_crossover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9A21AE75B1006DF4AF /* alg_crossover.cpp */; };
+		0375FBB721AE75B5006DF4AF /* gnuplot_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9B21AE75B1006DF4AF /* gnuplot_interface.cpp */; };
+		0375FBB821AE75B5006DF4AF /* problem_self.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9C21AE75B1006DF4AF /* problem_self.cpp */; };
+		0375FBB921AE75B5006DF4AF /* alg_nsgaiii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9E21AE75B2006DF4AF /* alg_nsgaiii.cpp */; };
+		0375FBBA21AE75B5006DF4AF /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9F21AE75B2006DF4AF /* log.cpp */; };
+		0375FBBB21AE75B5006DF4AF /* problem_DTLZ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBA121AE75B2006DF4AF /* problem_DTLZ.cpp */; };
+		0375FBBC21AE75B5006DF4AF /* problem_ZDT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBA221AE75B2006DF4AF /* problem_ZDT.cpp */; };
+		0375FBBD21AE75B5006DF4AF /* exp_indicator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBA521AE75B3006DF4AF /* exp_indicator.cpp */; };
+		0375FBBE21AE75B5006DF4AF /* alg_initialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBA721AE75B3006DF4AF /* alg_initialization.cpp */; };
+		0375FBBF21AE75B5006DF4AF /* aux_math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBA821AE75B3006DF4AF /* aux_math.cpp */; };
+		0375FBC021AE75B5006DF4AF /* alg_reference_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBAA21AE75B4006DF4AF /* alg_reference_point.cpp */; };
+		0375FBC121AE75B5006DF4AF /* alg_environmental_selection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBAC21AE75B4006DF4AF /* alg_environmental_selection.cpp */; };
+		0375FBC221AE75B5006DF4AF /* aux_misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBAD21AE75B4006DF4AF /* aux_misc.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +43,47 @@
 
 /* Begin PBXFileReference section */
 		0375FB3F21ADEFC9006DF4AF /* nsga3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nsga3; sourceTree = BUILT_PRODUCTS_DIR; };
-		0375FB4221ADEFC9006DF4AF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0375FB8621AE75AF006DF4AF /* alg_population.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_population.h; sourceTree = "<group>"; };
+		0375FB8721AE75AF006DF4AF /* alg_reference_point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_reference_point.h; sourceTree = "<group>"; };
+		0375FB8821AE75AF006DF4AF /* alg_mutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_mutation.cpp; sourceTree = "<group>"; };
+		0375FB8921AE75AF006DF4AF /* alg_individual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_individual.h; sourceTree = "<group>"; };
+		0375FB8A21AE75AF006DF4AF /* aux_misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aux_misc.h; sourceTree = "<group>"; };
+		0375FB8B21AE75B0006DF4AF /* alg_comparator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_comparator.cpp; sourceTree = "<group>"; };
+		0375FB8C21AE75B0006DF4AF /* alg_nondominated_sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_nondominated_sort.h; sourceTree = "<group>"; };
+		0375FB8D21AE75B0006DF4AF /* alg_nondominated_sort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_nondominated_sort.cpp; sourceTree = "<group>"; };
+		0375FB8E21AE75B0006DF4AF /* exp_indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exp_indicator.h; sourceTree = "<group>"; };
+		0375FB8F21AE75B0006DF4AF /* gnuplot_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gnuplot_interface.h; sourceTree = "<group>"; };
+		0375FB9021AE75B0006DF4AF /* problem_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_base.h; sourceTree = "<group>"; };
+		0375FB9121AE75B0006DF4AF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../Downloads/nsga3cpp1/src/main.cpp; sourceTree = "<group>"; };
+		0375FB9221AE75B0006DF4AF /* alg_nsgaiii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_nsgaiii.h; sourceTree = "<group>"; };
+		0375FB9321AE75B0006DF4AF /* problem_self.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_self.h; sourceTree = "<group>"; };
+		0375FB9421AE75B0006DF4AF /* exp_experiment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exp_experiment.cpp; sourceTree = "<group>"; };
+		0375FB9521AE75B0006DF4AF /* alg_comparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_comparator.h; sourceTree = "<group>"; };
+		0375FB9621AE75B1006DF4AF /* problem_DTLZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_DTLZ.h; sourceTree = "<group>"; };
+		0375FB9721AE75B1006DF4AF /* alg_individual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_individual.cpp; sourceTree = "<group>"; };
+		0375FB9821AE75B1006DF4AF /* problem_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = problem_factory.cpp; sourceTree = "<group>"; };
+		0375FB9921AE75B1006DF4AF /* problem_ZDT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_ZDT.h; sourceTree = "<group>"; };
+		0375FB9A21AE75B1006DF4AF /* alg_crossover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_crossover.cpp; sourceTree = "<group>"; };
+		0375FB9B21AE75B1006DF4AF /* gnuplot_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gnuplot_interface.cpp; sourceTree = "<group>"; };
+		0375FB9C21AE75B1006DF4AF /* problem_self.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = problem_self.cpp; sourceTree = "<group>"; };
+		0375FB9D21AE75B2006DF4AF /* aux_math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aux_math.h; sourceTree = "<group>"; };
+		0375FB9E21AE75B2006DF4AF /* alg_nsgaiii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_nsgaiii.cpp; sourceTree = "<group>"; };
+		0375FB9F21AE75B2006DF4AF /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
+		0375FBA021AE75B2006DF4AF /* alg_environmental_selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_environmental_selection.h; sourceTree = "<group>"; };
+		0375FBA121AE75B2006DF4AF /* problem_DTLZ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = problem_DTLZ.cpp; sourceTree = "<group>"; };
+		0375FBA221AE75B2006DF4AF /* problem_ZDT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = problem_ZDT.cpp; sourceTree = "<group>"; };
+		0375FBA321AE75B2006DF4AF /* alg_initialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_initialization.h; sourceTree = "<group>"; };
+		0375FBA421AE75B3006DF4AF /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		0375FBA521AE75B3006DF4AF /* exp_indicator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exp_indicator.cpp; sourceTree = "<group>"; };
+		0375FBA621AE75B3006DF4AF /* exp_experiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exp_experiment.h; sourceTree = "<group>"; };
+		0375FBA721AE75B3006DF4AF /* alg_initialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_initialization.cpp; sourceTree = "<group>"; };
+		0375FBA821AE75B3006DF4AF /* aux_math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aux_math.cpp; sourceTree = "<group>"; };
+		0375FBA921AE75B4006DF4AF /* problem_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_factory.h; sourceTree = "<group>"; };
+		0375FBAA21AE75B4006DF4AF /* alg_reference_point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_reference_point.cpp; sourceTree = "<group>"; };
+		0375FBAB21AE75B4006DF4AF /* alg_mutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_mutation.h; sourceTree = "<group>"; };
+		0375FBAC21AE75B4006DF4AF /* alg_environmental_selection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_environmental_selection.cpp; sourceTree = "<group>"; };
+		0375FBAD21AE75B4006DF4AF /* aux_misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aux_misc.cpp; sourceTree = "<group>"; };
+		0375FBAE21AE75B5006DF4AF /* alg_crossover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_crossover.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +116,47 @@
 		0375FB4121ADEFC9006DF4AF /* nsga3 */ = {
 			isa = PBXGroup;
 			children = (
-				0375FB4221ADEFC9006DF4AF /* main.cpp */,
+				0375FB8B21AE75B0006DF4AF /* alg_comparator.cpp */,
+				0375FB9521AE75B0006DF4AF /* alg_comparator.h */,
+				0375FB9A21AE75B1006DF4AF /* alg_crossover.cpp */,
+				0375FBAE21AE75B5006DF4AF /* alg_crossover.h */,
+				0375FBAC21AE75B4006DF4AF /* alg_environmental_selection.cpp */,
+				0375FBA021AE75B2006DF4AF /* alg_environmental_selection.h */,
+				0375FB9721AE75B1006DF4AF /* alg_individual.cpp */,
+				0375FB8921AE75AF006DF4AF /* alg_individual.h */,
+				0375FBA721AE75B3006DF4AF /* alg_initialization.cpp */,
+				0375FBA321AE75B2006DF4AF /* alg_initialization.h */,
+				0375FB8821AE75AF006DF4AF /* alg_mutation.cpp */,
+				0375FBAB21AE75B4006DF4AF /* alg_mutation.h */,
+				0375FB8D21AE75B0006DF4AF /* alg_nondominated_sort.cpp */,
+				0375FB8C21AE75B0006DF4AF /* alg_nondominated_sort.h */,
+				0375FB9E21AE75B2006DF4AF /* alg_nsgaiii.cpp */,
+				0375FB9221AE75B0006DF4AF /* alg_nsgaiii.h */,
+				0375FB8621AE75AF006DF4AF /* alg_population.h */,
+				0375FBAA21AE75B4006DF4AF /* alg_reference_point.cpp */,
+				0375FB8721AE75AF006DF4AF /* alg_reference_point.h */,
+				0375FBA821AE75B3006DF4AF /* aux_math.cpp */,
+				0375FB9D21AE75B2006DF4AF /* aux_math.h */,
+				0375FBAD21AE75B4006DF4AF /* aux_misc.cpp */,
+				0375FB8A21AE75AF006DF4AF /* aux_misc.h */,
+				0375FB9421AE75B0006DF4AF /* exp_experiment.cpp */,
+				0375FBA621AE75B3006DF4AF /* exp_experiment.h */,
+				0375FBA521AE75B3006DF4AF /* exp_indicator.cpp */,
+				0375FB8E21AE75B0006DF4AF /* exp_indicator.h */,
+				0375FB9B21AE75B1006DF4AF /* gnuplot_interface.cpp */,
+				0375FB8F21AE75B0006DF4AF /* gnuplot_interface.h */,
+				0375FB9F21AE75B2006DF4AF /* log.cpp */,
+				0375FBA421AE75B3006DF4AF /* log.h */,
+				0375FB9121AE75B0006DF4AF /* main.cpp */,
+				0375FB9021AE75B0006DF4AF /* problem_base.h */,
+				0375FBA121AE75B2006DF4AF /* problem_DTLZ.cpp */,
+				0375FB9621AE75B1006DF4AF /* problem_DTLZ.h */,
+				0375FB9821AE75B1006DF4AF /* problem_factory.cpp */,
+				0375FBA921AE75B4006DF4AF /* problem_factory.h */,
+				0375FB9C21AE75B1006DF4AF /* problem_self.cpp */,
+				0375FB9321AE75B0006DF4AF /* problem_self.h */,
+				0375FBA221AE75B2006DF4AF /* problem_ZDT.cpp */,
+				0375FB9921AE75B1006DF4AF /* problem_ZDT.h */,
 			);
 			path = nsga3;
 			sourceTree = "<group>";
@@ -118,7 +217,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0375FB4321ADEFC9006DF4AF /* main.cpp in Sources */,
+				0375FBBF21AE75B5006DF4AF /* aux_math.cpp in Sources */,
+				0375FBB621AE75B5006DF4AF /* alg_crossover.cpp in Sources */,
+				0375FBC121AE75B5006DF4AF /* alg_environmental_selection.cpp in Sources */,
+				0375FBC221AE75B5006DF4AF /* aux_misc.cpp in Sources */,
+				0375FBB121AE75B5006DF4AF /* alg_nondominated_sort.cpp in Sources */,
+				0375FBB721AE75B5006DF4AF /* gnuplot_interface.cpp in Sources */,
+				0375FBC021AE75B5006DF4AF /* alg_reference_point.cpp in Sources */,
+				0375FBBE21AE75B5006DF4AF /* alg_initialization.cpp in Sources */,
+				0375FBB321AE75B5006DF4AF /* exp_experiment.cpp in Sources */,
+				0375FBAF21AE75B5006DF4AF /* alg_mutation.cpp in Sources */,
+				0375FBBC21AE75B5006DF4AF /* problem_ZDT.cpp in Sources */,
+				0375FBB521AE75B5006DF4AF /* problem_factory.cpp in Sources */,
+				0375FBBB21AE75B5006DF4AF /* problem_DTLZ.cpp in Sources */,
+				0375FBB921AE75B5006DF4AF /* alg_nsgaiii.cpp in Sources */,
+				0375FBB821AE75B5006DF4AF /* problem_self.cpp in Sources */,
+				0375FBBD21AE75B5006DF4AF /* exp_indicator.cpp in Sources */,
+				0375FBB421AE75B5006DF4AF /* alg_individual.cpp in Sources */,
+				0375FBBA21AE75B5006DF4AF /* log.cpp in Sources */,
+				0375FBB221AE75B5006DF4AF /* main.cpp in Sources */,
+				0375FBB021AE75B5006DF4AF /* alg_comparator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
