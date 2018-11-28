@@ -6,6 +6,7 @@
 
 #include <cstddef>
 #include <algorithm>
+#include <cmath>
 using std::size_t;
 
 // ----------------------------------------------------------------------

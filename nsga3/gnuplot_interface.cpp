@@ -37,7 +37,9 @@ Gnuplot::~Gnuplot()
 	if (!gnuplotpipe) return;
 
     fprintf(gnuplotpipe,"exit\n");
+#ifndef DO_NOT_HAVE_GNUPLOT
     _pclose(gnuplotpipe);
+#endif
 }
 // ---------------------------------------------------------
 void Gnuplot::operator()(const string & command)

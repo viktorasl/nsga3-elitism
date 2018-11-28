@@ -11,7 +11,6 @@
 
 #include "gnuplot_interface.h"
 #include "log.h"
-#include "windows.h" // for Sleep()
 
 #include <vector>
 #include <fstream>
@@ -57,7 +56,10 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem)
 	size_t PopSize = rps.size();
 	while (PopSize%4) PopSize += 1;
 
-	CPopulation pop[2]={CPopulation(PopSize)};
+	CPopulation pop[2]={
+		CPopulation(PopSize),
+		CPopulation(PopSize)
+	};
 	CSimulatedBinaryCrossover SBX(pc_, eta_c_);
 	CPolynomialMutation PolyMut(1.0/problem.num_variables(), eta_m_);
 
