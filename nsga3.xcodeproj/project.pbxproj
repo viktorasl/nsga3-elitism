@@ -27,17 +27,156 @@
 		0375FBC021AE75B5006DF4AF /* alg_reference_point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBAA21AE75B4006DF4AF /* alg_reference_point.cpp */; };
 		0375FBC121AE75B5006DF4AF /* alg_environmental_selection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBAC21AE75B4006DF4AF /* alg_environmental_selection.cpp */; };
 		0375FBC221AE75B5006DF4AF /* aux_misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FBAD21AE75B4006DF4AF /* aux_misc.cpp */; };
+		0375FBFF21AEAA78006DF4AF /* explist.ini in Copy Experiment initiation */ = {isa = PBXBuildFile; fileRef = 0375FBC721AEAA37006DF4AF /* explist.ini */; };
+		0375FC0121AEAAD3006DF4AF /* expDTLZ1(8).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBC921AEAA37006DF4AF /* expDTLZ1(8).ini */; };
+		0375FC0221AEAAD3006DF4AF /* expDTLZ3(5).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBCA21AEAA37006DF4AF /* expDTLZ3(5).ini */; };
+		0375FC0321AEAAD3006DF4AF /* expDTLZ1(5).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBCB21AEAA37006DF4AF /* expDTLZ1(5).ini */; };
+		0375FC0421AEAAD3006DF4AF /* expDTLZ3(8).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBCC21AEAA37006DF4AF /* expDTLZ3(8).ini */; };
+		0375FC0521AEAAD3006DF4AF /* expDTLZ1(10).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBCD21AEAA37006DF4AF /* expDTLZ1(10).ini */; };
+		0375FC0621AEAAD3006DF4AF /* expDTLZ3(3).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBCE21AEAA37006DF4AF /* expDTLZ3(3).ini */; };
+		0375FC0721AEAAD3006DF4AF /* expDTLZ3(10).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBCF21AEAA37006DF4AF /* expDTLZ3(10).ini */; };
+		0375FC0821AEAAD3006DF4AF /* expDTLZ2(10).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD021AEAA37006DF4AF /* expDTLZ2(10).ini */; };
+		0375FC0921AEAAD3006DF4AF /* expDTLZ4(15).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD121AEAA37006DF4AF /* expDTLZ4(15).ini */; };
+		0375FC0A21AEAAD3006DF4AF /* expDTLZ1(3).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD221AEAA37006DF4AF /* expDTLZ1(3).ini */; };
+		0375FC0B21AEAAD3006DF4AF /* expSelf.ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD321AEAA37006DF4AF /* expSelf.ini */; };
+		0375FC0C21AEAAD3006DF4AF /* expDTLZ2(5).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD421AEAA37006DF4AF /* expDTLZ2(5).ini */; };
+		0375FC0D21AEAAD3006DF4AF /* expDTLZ4(3).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD521AEAA37006DF4AF /* expDTLZ4(3).ini */; };
+		0375FC0E21AEAAD3006DF4AF /* expDTLZ1(15).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD621AEAA37006DF4AF /* expDTLZ1(15).ini */; };
+		0375FC0F21AEAAD3006DF4AF /* expDTLZ2(8).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD721AEAA37006DF4AF /* expDTLZ2(8).ini */; };
+		0375FC1021AEAAD3006DF4AF /* expZDT4.ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD821AEAA37006DF4AF /* expZDT4.ini */; };
+		0375FC1121AEAAD3006DF4AF /* expDTLZ2(15).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBD921AEAA37006DF4AF /* expDTLZ2(15).ini */; };
+		0375FC1221AEAAD3006DF4AF /* expDTLZ4(10).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBDA21AEAA37006DF4AF /* expDTLZ4(10).ini */; };
+		0375FC1321AEAAD3006DF4AF /* expDTLZ2(3).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBDB21AEAA37006DF4AF /* expDTLZ2(3).ini */; };
+		0375FC1421AEAAD3006DF4AF /* expDTLZ4(5).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBDC21AEAA37006DF4AF /* expDTLZ4(5).ini */; };
+		0375FC1521AEAAD3006DF4AF /* expZDT6.ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBDD21AEAA37006DF4AF /* expZDT6.ini */; };
+		0375FC1621AEAAD3006DF4AF /* expZDT2.ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBDE21AEAA37006DF4AF /* expZDT2.ini */; };
+		0375FC1721AEAAD3006DF4AF /* expZDT3.ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBDF21AEAA37006DF4AF /* expZDT3.ini */; };
+		0375FC1821AEAAD3006DF4AF /* expDTLZ4(8).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBE021AEAA37006DF4AF /* expDTLZ4(8).ini */; };
+		0375FC1921AEAAD3006DF4AF /* expZDT1.ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBE121AEAA37006DF4AF /* expZDT1.ini */; };
+		0375FC1A21AEAAD3006DF4AF /* expDTLZ3(15).ini in Copy Experiments */ = {isa = PBXBuildFile; fileRef = 0375FBE221AEAA37006DF4AF /* expDTLZ3(15).ini */; };
+		0375FC1C21AEAB17006DF4AF /* DTLZ3(8)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBE421AEAA37006DF4AF /* DTLZ3(8)-PF.txt */; };
+		0375FC1D21AEAB17006DF4AF /* DTLZ4(3)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBE521AEAA37006DF4AF /* DTLZ4(3)-PF.txt */; };
+		0375FC1E21AEAB17006DF4AF /* ZDT6-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBE621AEAA37006DF4AF /* ZDT6-PF.txt */; };
+		0375FC1F21AEAB17006DF4AF /* ZDT4-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBE721AEAA37006DF4AF /* ZDT4-PF.txt */; };
+		0375FC2021AEAB17006DF4AF /* DTLZ3(15)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBE821AEAA37006DF4AF /* DTLZ3(15)-PF.txt */; };
+		0375FC2121AEAB17006DF4AF /* DTLZ2(3)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBE921AEAA37006DF4AF /* DTLZ2(3)-PF.txt */; };
+		0375FC2221AEAB17006DF4AF /* DTLZ2(8)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBEA21AEAA37006DF4AF /* DTLZ2(8)-PF.txt */; };
+		0375FC2321AEAB17006DF4AF /* DTLZ4(15)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBEB21AEAA37006DF4AF /* DTLZ4(15)-PF.txt */; };
+		0375FC2421AEAB17006DF4AF /* DTLZ1(5)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBEC21AEAA37006DF4AF /* DTLZ1(5)-PF.txt */; };
+		0375FC2521AEAB17006DF4AF /* DTLZ4(8)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBED21AEAA37006DF4AF /* DTLZ4(8)-PF.txt */; };
+		0375FC2621AEAB17006DF4AF /* DTLZ1(15)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBEE21AEAA37006DF4AF /* DTLZ1(15)-PF.txt */; };
+		0375FC2721AEAB17006DF4AF /* DTLZ2(10)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBEF21AEAA37006DF4AF /* DTLZ2(10)-PF.txt */; };
+		0375FC2821AEAB17006DF4AF /* DTLZ3(3)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF021AEAA37006DF4AF /* DTLZ3(3)-PF.txt */; };
+		0375FC2921AEAB17006DF4AF /* ZDT2-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF121AEAA37006DF4AF /* ZDT2-PF.txt */; };
+		0375FC2A21AEAB17006DF4AF /* DTLZ2(15)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF221AEAA37006DF4AF /* DTLZ2(15)-PF.txt */; };
+		0375FC2B21AEAB17006DF4AF /* DTLZ1(8)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF321AEAA37006DF4AF /* DTLZ1(8)-PF.txt */; };
+		0375FC2C21AEAB17006DF4AF /* DTLZ1(10)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF421AEAA37006DF4AF /* DTLZ1(10)-PF.txt */; };
+		0375FC2D21AEAB17006DF4AF /* DTLZ2(5)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF521AEAA37006DF4AF /* DTLZ2(5)-PF.txt */; };
+		0375FC2E21AEAB17006DF4AF /* DTLZ4(10)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF621AEAA37006DF4AF /* DTLZ4(10)-PF.txt */; };
+		0375FC2F21AEAB17006DF4AF /* DTLZ4(5)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF721AEAA37006DF4AF /* DTLZ4(5)-PF.txt */; };
+		0375FC3121AEAB17006DF4AF /* DTLZ3(5)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBF921AEAA37006DF4AF /* DTLZ3(5)-PF.txt */; };
+		0375FC3221AEAB17006DF4AF /* ZDT1-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFA21AEAA37006DF4AF /* ZDT1-PF.txt */; };
+		0375FC3321AEAB17006DF4AF /* @readme.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFB21AEAA37006DF4AF /* @readme.txt */; };
+		0375FC3421AEAB17006DF4AF /* DTLZ3(10)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFC21AEAA37006DF4AF /* DTLZ3(10)-PF.txt */; };
+		0375FC3521AEAB17006DF4AF /* ZDT3-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFD21AEAA37006DF4AF /* ZDT3-PF.txt */; };
+		0375FC3621AEAB17006DF4AF /* DTLZ1(3)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFE21AEAA37006DF4AF /* DTLZ1(3)-PF.txt */; };
+		0375FC3921AEAC68006DF4AF /* dummy in Copy Results folder */ = {isa = PBXBuildFile; fileRef = 0375FC3821AEAC59006DF4AF /* dummy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0375FB3D21ADEFC9006DF4AF /* CopyFiles */ = {
+		0375FB3D21ADEFC9006DF4AF /* Copy Experiment initiation */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				0375FBFF21AEAA78006DF4AF /* explist.ini in Copy Experiment initiation */,
+			);
+			name = "Copy Experiment initiation";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0375FC0021AEAAB7006DF4AF /* Copy Experiments */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = Experiments;
+			dstSubfolderSpec = 16;
 			files = (
+				0375FC0121AEAAD3006DF4AF /* expDTLZ1(8).ini in Copy Experiments */,
+				0375FC0221AEAAD3006DF4AF /* expDTLZ3(5).ini in Copy Experiments */,
+				0375FC0321AEAAD3006DF4AF /* expDTLZ1(5).ini in Copy Experiments */,
+				0375FC0421AEAAD3006DF4AF /* expDTLZ3(8).ini in Copy Experiments */,
+				0375FC0521AEAAD3006DF4AF /* expDTLZ1(10).ini in Copy Experiments */,
+				0375FC0621AEAAD3006DF4AF /* expDTLZ3(3).ini in Copy Experiments */,
+				0375FC0721AEAAD3006DF4AF /* expDTLZ3(10).ini in Copy Experiments */,
+				0375FC0821AEAAD3006DF4AF /* expDTLZ2(10).ini in Copy Experiments */,
+				0375FC0921AEAAD3006DF4AF /* expDTLZ4(15).ini in Copy Experiments */,
+				0375FC0A21AEAAD3006DF4AF /* expDTLZ1(3).ini in Copy Experiments */,
+				0375FC0B21AEAAD3006DF4AF /* expSelf.ini in Copy Experiments */,
+				0375FC0C21AEAAD3006DF4AF /* expDTLZ2(5).ini in Copy Experiments */,
+				0375FC0D21AEAAD3006DF4AF /* expDTLZ4(3).ini in Copy Experiments */,
+				0375FC0E21AEAAD3006DF4AF /* expDTLZ1(15).ini in Copy Experiments */,
+				0375FC0F21AEAAD3006DF4AF /* expDTLZ2(8).ini in Copy Experiments */,
+				0375FC1021AEAAD3006DF4AF /* expZDT4.ini in Copy Experiments */,
+				0375FC1121AEAAD3006DF4AF /* expDTLZ2(15).ini in Copy Experiments */,
+				0375FC1221AEAAD3006DF4AF /* expDTLZ4(10).ini in Copy Experiments */,
+				0375FC1321AEAAD3006DF4AF /* expDTLZ2(3).ini in Copy Experiments */,
+				0375FC1421AEAAD3006DF4AF /* expDTLZ4(5).ini in Copy Experiments */,
+				0375FC1521AEAAD3006DF4AF /* expZDT6.ini in Copy Experiments */,
+				0375FC1621AEAAD3006DF4AF /* expZDT2.ini in Copy Experiments */,
+				0375FC1721AEAAD3006DF4AF /* expZDT3.ini in Copy Experiments */,
+				0375FC1821AEAAD3006DF4AF /* expDTLZ4(8).ini in Copy Experiments */,
+				0375FC1921AEAAD3006DF4AF /* expZDT1.ini in Copy Experiments */,
+				0375FC1A21AEAAD3006DF4AF /* expDTLZ3(15).ini in Copy Experiments */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			name = "Copy Experiments";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0375FC1B21AEAAFD006DF4AF /* Copy True Pareto fronts */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = PF;
+			dstSubfolderSpec = 16;
+			files = (
+				0375FC1C21AEAB17006DF4AF /* DTLZ3(8)-PF.txt in Copy True Pareto fronts */,
+				0375FC1D21AEAB17006DF4AF /* DTLZ4(3)-PF.txt in Copy True Pareto fronts */,
+				0375FC1E21AEAB17006DF4AF /* ZDT6-PF.txt in Copy True Pareto fronts */,
+				0375FC1F21AEAB17006DF4AF /* ZDT4-PF.txt in Copy True Pareto fronts */,
+				0375FC2021AEAB17006DF4AF /* DTLZ3(15)-PF.txt in Copy True Pareto fronts */,
+				0375FC2121AEAB17006DF4AF /* DTLZ2(3)-PF.txt in Copy True Pareto fronts */,
+				0375FC2221AEAB17006DF4AF /* DTLZ2(8)-PF.txt in Copy True Pareto fronts */,
+				0375FC2321AEAB17006DF4AF /* DTLZ4(15)-PF.txt in Copy True Pareto fronts */,
+				0375FC2421AEAB17006DF4AF /* DTLZ1(5)-PF.txt in Copy True Pareto fronts */,
+				0375FC2521AEAB17006DF4AF /* DTLZ4(8)-PF.txt in Copy True Pareto fronts */,
+				0375FC2621AEAB17006DF4AF /* DTLZ1(15)-PF.txt in Copy True Pareto fronts */,
+				0375FC2721AEAB17006DF4AF /* DTLZ2(10)-PF.txt in Copy True Pareto fronts */,
+				0375FC2821AEAB17006DF4AF /* DTLZ3(3)-PF.txt in Copy True Pareto fronts */,
+				0375FC2921AEAB17006DF4AF /* ZDT2-PF.txt in Copy True Pareto fronts */,
+				0375FC2A21AEAB17006DF4AF /* DTLZ2(15)-PF.txt in Copy True Pareto fronts */,
+				0375FC2B21AEAB17006DF4AF /* DTLZ1(8)-PF.txt in Copy True Pareto fronts */,
+				0375FC2C21AEAB17006DF4AF /* DTLZ1(10)-PF.txt in Copy True Pareto fronts */,
+				0375FC2D21AEAB17006DF4AF /* DTLZ2(5)-PF.txt in Copy True Pareto fronts */,
+				0375FC2E21AEAB17006DF4AF /* DTLZ4(10)-PF.txt in Copy True Pareto fronts */,
+				0375FC2F21AEAB17006DF4AF /* DTLZ4(5)-PF.txt in Copy True Pareto fronts */,
+				0375FC3121AEAB17006DF4AF /* DTLZ3(5)-PF.txt in Copy True Pareto fronts */,
+				0375FC3221AEAB17006DF4AF /* ZDT1-PF.txt in Copy True Pareto fronts */,
+				0375FC3321AEAB17006DF4AF /* @readme.txt in Copy True Pareto fronts */,
+				0375FC3421AEAB17006DF4AF /* DTLZ3(10)-PF.txt in Copy True Pareto fronts */,
+				0375FC3521AEAB17006DF4AF /* ZDT3-PF.txt in Copy True Pareto fronts */,
+				0375FC3621AEAB17006DF4AF /* DTLZ1(3)-PF.txt in Copy True Pareto fronts */,
+			);
+			name = "Copy True Pareto fronts";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0375FC3721AEAC1C006DF4AF /* Copy Results folder */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Results;
+			dstSubfolderSpec = 16;
+			files = (
+				0375FC3921AEAC68006DF4AF /* dummy in Copy Results folder */,
+			);
+			name = "Copy Results folder";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -84,6 +223,61 @@
 		0375FBAC21AE75B4006DF4AF /* alg_environmental_selection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alg_environmental_selection.cpp; sourceTree = "<group>"; };
 		0375FBAD21AE75B4006DF4AF /* aux_misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aux_misc.cpp; sourceTree = "<group>"; };
 		0375FBAE21AE75B5006DF4AF /* alg_crossover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_crossover.h; sourceTree = "<group>"; };
+		0375FBC721AEAA37006DF4AF /* explist.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = explist.ini; sourceTree = "<group>"; };
+		0375FBC921AEAA37006DF4AF /* expDTLZ1(8).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ1(8).ini"; sourceTree = "<group>"; };
+		0375FBCA21AEAA37006DF4AF /* expDTLZ3(5).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ3(5).ini"; sourceTree = "<group>"; };
+		0375FBCB21AEAA37006DF4AF /* expDTLZ1(5).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ1(5).ini"; sourceTree = "<group>"; };
+		0375FBCC21AEAA37006DF4AF /* expDTLZ3(8).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ3(8).ini"; sourceTree = "<group>"; };
+		0375FBCD21AEAA37006DF4AF /* expDTLZ1(10).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ1(10).ini"; sourceTree = "<group>"; };
+		0375FBCE21AEAA37006DF4AF /* expDTLZ3(3).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ3(3).ini"; sourceTree = "<group>"; };
+		0375FBCF21AEAA37006DF4AF /* expDTLZ3(10).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ3(10).ini"; sourceTree = "<group>"; };
+		0375FBD021AEAA37006DF4AF /* expDTLZ2(10).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ2(10).ini"; sourceTree = "<group>"; };
+		0375FBD121AEAA37006DF4AF /* expDTLZ4(15).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ4(15).ini"; sourceTree = "<group>"; };
+		0375FBD221AEAA37006DF4AF /* expDTLZ1(3).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ1(3).ini"; sourceTree = "<group>"; };
+		0375FBD321AEAA37006DF4AF /* expSelf.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = expSelf.ini; sourceTree = "<group>"; };
+		0375FBD421AEAA37006DF4AF /* expDTLZ2(5).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ2(5).ini"; sourceTree = "<group>"; };
+		0375FBD521AEAA37006DF4AF /* expDTLZ4(3).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ4(3).ini"; sourceTree = "<group>"; };
+		0375FBD621AEAA37006DF4AF /* expDTLZ1(15).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ1(15).ini"; sourceTree = "<group>"; };
+		0375FBD721AEAA37006DF4AF /* expDTLZ2(8).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ2(8).ini"; sourceTree = "<group>"; };
+		0375FBD821AEAA37006DF4AF /* expZDT4.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = expZDT4.ini; sourceTree = "<group>"; };
+		0375FBD921AEAA37006DF4AF /* expDTLZ2(15).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ2(15).ini"; sourceTree = "<group>"; };
+		0375FBDA21AEAA37006DF4AF /* expDTLZ4(10).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ4(10).ini"; sourceTree = "<group>"; };
+		0375FBDB21AEAA37006DF4AF /* expDTLZ2(3).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ2(3).ini"; sourceTree = "<group>"; };
+		0375FBDC21AEAA37006DF4AF /* expDTLZ4(5).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ4(5).ini"; sourceTree = "<group>"; };
+		0375FBDD21AEAA37006DF4AF /* expZDT6.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = expZDT6.ini; sourceTree = "<group>"; };
+		0375FBDE21AEAA37006DF4AF /* expZDT2.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = expZDT2.ini; sourceTree = "<group>"; };
+		0375FBDF21AEAA37006DF4AF /* expZDT3.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = expZDT3.ini; sourceTree = "<group>"; };
+		0375FBE021AEAA37006DF4AF /* expDTLZ4(8).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ4(8).ini"; sourceTree = "<group>"; };
+		0375FBE121AEAA37006DF4AF /* expZDT1.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = expZDT1.ini; sourceTree = "<group>"; };
+		0375FBE221AEAA37006DF4AF /* expDTLZ3(15).ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expDTLZ3(15).ini"; sourceTree = "<group>"; };
+		0375FBE421AEAA37006DF4AF /* DTLZ3(8)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ3(8)-PF.txt"; sourceTree = "<group>"; };
+		0375FBE521AEAA37006DF4AF /* DTLZ4(3)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ4(3)-PF.txt"; sourceTree = "<group>"; };
+		0375FBE621AEAA37006DF4AF /* ZDT6-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ZDT6-PF.txt"; sourceTree = "<group>"; };
+		0375FBE721AEAA37006DF4AF /* ZDT4-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ZDT4-PF.txt"; sourceTree = "<group>"; };
+		0375FBE821AEAA37006DF4AF /* DTLZ3(15)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ3(15)-PF.txt"; sourceTree = "<group>"; };
+		0375FBE921AEAA37006DF4AF /* DTLZ2(3)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ2(3)-PF.txt"; sourceTree = "<group>"; };
+		0375FBEA21AEAA37006DF4AF /* DTLZ2(8)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ2(8)-PF.txt"; sourceTree = "<group>"; };
+		0375FBEB21AEAA37006DF4AF /* DTLZ4(15)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ4(15)-PF.txt"; sourceTree = "<group>"; };
+		0375FBEC21AEAA37006DF4AF /* DTLZ1(5)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(5)-PF.txt"; sourceTree = "<group>"; };
+		0375FBED21AEAA37006DF4AF /* DTLZ4(8)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ4(8)-PF.txt"; sourceTree = "<group>"; };
+		0375FBEE21AEAA37006DF4AF /* DTLZ1(15)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(15)-PF.txt"; sourceTree = "<group>"; };
+		0375FBEF21AEAA37006DF4AF /* DTLZ2(10)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ2(10)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF021AEAA37006DF4AF /* DTLZ3(3)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ3(3)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF121AEAA37006DF4AF /* ZDT2-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ZDT2-PF.txt"; sourceTree = "<group>"; };
+		0375FBF221AEAA37006DF4AF /* DTLZ2(15)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ2(15)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF321AEAA37006DF4AF /* DTLZ1(8)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(8)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF421AEAA37006DF4AF /* DTLZ1(10)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(10)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF521AEAA37006DF4AF /* DTLZ2(5)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ2(5)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF621AEAA37006DF4AF /* DTLZ4(10)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ4(10)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF721AEAA37006DF4AF /* DTLZ4(5)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ4(5)-PF.txt"; sourceTree = "<group>"; };
+		0375FBF821AEAA37006DF4AF /* DTLZ_PF_Generator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DTLZ_PF_Generator.cpp; sourceTree = "<group>"; };
+		0375FBF921AEAA37006DF4AF /* DTLZ3(5)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ3(5)-PF.txt"; sourceTree = "<group>"; };
+		0375FBFA21AEAA37006DF4AF /* ZDT1-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ZDT1-PF.txt"; sourceTree = "<group>"; };
+		0375FBFB21AEAA37006DF4AF /* @readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "@readme.txt"; sourceTree = "<group>"; };
+		0375FBFC21AEAA37006DF4AF /* DTLZ3(10)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ3(10)-PF.txt"; sourceTree = "<group>"; };
+		0375FBFD21AEAA37006DF4AF /* ZDT3-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ZDT3-PF.txt"; sourceTree = "<group>"; };
+		0375FBFE21AEAA37006DF4AF /* DTLZ1(3)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(3)-PF.txt"; sourceTree = "<group>"; };
+		0375FC3821AEAC59006DF4AF /* dummy */ = {isa = PBXFileReference; lastKnownFileType = text; path = dummy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +294,10 @@
 		0375FB3621ADEFC9006DF4AF = {
 			isa = PBXGroup;
 			children = (
+				0375FC3821AEAC59006DF4AF /* dummy */,
+				0375FBC821AEAA37006DF4AF /* Experiments */,
+				0375FBC721AEAA37006DF4AF /* explist.ini */,
+				0375FBE321AEAA37006DF4AF /* PF */,
 				0375FB4121ADEFC9006DF4AF /* nsga3 */,
 				0375FB4021ADEFC9006DF4AF /* Products */,
 			);
@@ -161,6 +359,73 @@
 			path = nsga3;
 			sourceTree = "<group>";
 		};
+		0375FBC821AEAA37006DF4AF /* Experiments */ = {
+			isa = PBXGroup;
+			children = (
+				0375FBC921AEAA37006DF4AF /* expDTLZ1(8).ini */,
+				0375FBCA21AEAA37006DF4AF /* expDTLZ3(5).ini */,
+				0375FBCB21AEAA37006DF4AF /* expDTLZ1(5).ini */,
+				0375FBCC21AEAA37006DF4AF /* expDTLZ3(8).ini */,
+				0375FBCD21AEAA37006DF4AF /* expDTLZ1(10).ini */,
+				0375FBCE21AEAA37006DF4AF /* expDTLZ3(3).ini */,
+				0375FBCF21AEAA37006DF4AF /* expDTLZ3(10).ini */,
+				0375FBD021AEAA37006DF4AF /* expDTLZ2(10).ini */,
+				0375FBD121AEAA37006DF4AF /* expDTLZ4(15).ini */,
+				0375FBD221AEAA37006DF4AF /* expDTLZ1(3).ini */,
+				0375FBD321AEAA37006DF4AF /* expSelf.ini */,
+				0375FBD421AEAA37006DF4AF /* expDTLZ2(5).ini */,
+				0375FBD521AEAA37006DF4AF /* expDTLZ4(3).ini */,
+				0375FBD621AEAA37006DF4AF /* expDTLZ1(15).ini */,
+				0375FBD721AEAA37006DF4AF /* expDTLZ2(8).ini */,
+				0375FBD821AEAA37006DF4AF /* expZDT4.ini */,
+				0375FBD921AEAA37006DF4AF /* expDTLZ2(15).ini */,
+				0375FBDA21AEAA37006DF4AF /* expDTLZ4(10).ini */,
+				0375FBDB21AEAA37006DF4AF /* expDTLZ2(3).ini */,
+				0375FBDC21AEAA37006DF4AF /* expDTLZ4(5).ini */,
+				0375FBDD21AEAA37006DF4AF /* expZDT6.ini */,
+				0375FBDE21AEAA37006DF4AF /* expZDT2.ini */,
+				0375FBDF21AEAA37006DF4AF /* expZDT3.ini */,
+				0375FBE021AEAA37006DF4AF /* expDTLZ4(8).ini */,
+				0375FBE121AEAA37006DF4AF /* expZDT1.ini */,
+				0375FBE221AEAA37006DF4AF /* expDTLZ3(15).ini */,
+			);
+			path = Experiments;
+			sourceTree = "<group>";
+		};
+		0375FBE321AEAA37006DF4AF /* PF */ = {
+			isa = PBXGroup;
+			children = (
+				0375FBE421AEAA37006DF4AF /* DTLZ3(8)-PF.txt */,
+				0375FBE521AEAA37006DF4AF /* DTLZ4(3)-PF.txt */,
+				0375FBE621AEAA37006DF4AF /* ZDT6-PF.txt */,
+				0375FBE721AEAA37006DF4AF /* ZDT4-PF.txt */,
+				0375FBE821AEAA37006DF4AF /* DTLZ3(15)-PF.txt */,
+				0375FBE921AEAA37006DF4AF /* DTLZ2(3)-PF.txt */,
+				0375FBEA21AEAA37006DF4AF /* DTLZ2(8)-PF.txt */,
+				0375FBEB21AEAA37006DF4AF /* DTLZ4(15)-PF.txt */,
+				0375FBEC21AEAA37006DF4AF /* DTLZ1(5)-PF.txt */,
+				0375FBED21AEAA37006DF4AF /* DTLZ4(8)-PF.txt */,
+				0375FBEE21AEAA37006DF4AF /* DTLZ1(15)-PF.txt */,
+				0375FBEF21AEAA37006DF4AF /* DTLZ2(10)-PF.txt */,
+				0375FBF021AEAA37006DF4AF /* DTLZ3(3)-PF.txt */,
+				0375FBF121AEAA37006DF4AF /* ZDT2-PF.txt */,
+				0375FBF221AEAA37006DF4AF /* DTLZ2(15)-PF.txt */,
+				0375FBF321AEAA37006DF4AF /* DTLZ1(8)-PF.txt */,
+				0375FBF421AEAA37006DF4AF /* DTLZ1(10)-PF.txt */,
+				0375FBF521AEAA37006DF4AF /* DTLZ2(5)-PF.txt */,
+				0375FBF621AEAA37006DF4AF /* DTLZ4(10)-PF.txt */,
+				0375FBF721AEAA37006DF4AF /* DTLZ4(5)-PF.txt */,
+				0375FBF821AEAA37006DF4AF /* DTLZ_PF_Generator.cpp */,
+				0375FBF921AEAA37006DF4AF /* DTLZ3(5)-PF.txt */,
+				0375FBFA21AEAA37006DF4AF /* ZDT1-PF.txt */,
+				0375FBFB21AEAA37006DF4AF /* @readme.txt */,
+				0375FBFC21AEAA37006DF4AF /* DTLZ3(10)-PF.txt */,
+				0375FBFD21AEAA37006DF4AF /* ZDT3-PF.txt */,
+				0375FBFE21AEAA37006DF4AF /* DTLZ1(3)-PF.txt */,
+			);
+			path = PF;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,7 +435,10 @@
 			buildPhases = (
 				0375FB3B21ADEFC9006DF4AF /* Sources */,
 				0375FB3C21ADEFC9006DF4AF /* Frameworks */,
-				0375FB3D21ADEFC9006DF4AF /* CopyFiles */,
+				0375FB3D21ADEFC9006DF4AF /* Copy Experiment initiation */,
+				0375FC0021AEAAB7006DF4AF /* Copy Experiments */,
+				0375FC1B21AEAAFD006DF4AF /* Copy True Pareto fronts */,
+				0375FC3721AEAC1C006DF4AF /* Copy Results folder */,
 			);
 			buildRules = (
 			);
