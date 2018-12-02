@@ -74,4 +74,3 @@ double IGD(const TFront &PF, const TFront &approximation)
     return PF.size()>0?sum/PF.size():-1;
 }
 // ---------------------------------------------------------------------
-

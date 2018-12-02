@@ -24,4 +24,3 @@ bool CParetoDominate::operator()(const CIndividual &l, const CIndividual &r) con
 
 }// CParetoDominate::operator()
 // ----------------------------------------------------------------------------------
-
