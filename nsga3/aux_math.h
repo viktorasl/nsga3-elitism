@@ -20,6 +20,8 @@ void GuassianElimination(std::vector<double> *px, std::vector< std::vector<doubl
 
 // PerpendicularDistance(): calculate the perpendicular distance from a point to a line
 double PerpendicularDistance(const std::vector<double> &direction, const std::vector<double> &point);
+	
+double Angle(const std::vector<double> &direction, const std::vector<double> &point);
 }
 
 #endif

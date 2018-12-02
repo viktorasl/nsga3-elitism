@@ -123,7 +123,42 @@ double PerpendicularDistance(const vector<double> &direction, const vector<doubl
 }
 // ---------------------------------------------------------------------
 
+double length(const vector<double> &vector)
+{
+	double sqrSum = 0.0;
+	for (size_t i=0; i<vector.size(); i+=1)
+	{
+		sqrSum += square(vector[i]);
+	}
+	return sqrt(sqrSum);
+}
+	
+double dotProduct(const vector<double> &v1, const vector<double> &v2)
+{
+	double mulSum = 0.0;
+	size_t vSize = v1.size();
+	for (size_t i=0; i<vSize; i+=1)
+	{
+		mulSum += v1[i] * v2[i];
+	}
+	return mulSum;
+}
 
-
+double Angle(const vector<double> &direction, const vector<double> &point)
+{
+	float length1 = length(direction);// calculate modulus of Vector V1 i.e. |V1|
+	float length2 = length(point);
+	// calculate modulus of Vector V2 i.e. |V2|
+	float dot = dotProduct(direction, point); // calculate dot product between two vectors.
+	
+	float a = dot / (length1 * length2);
+	
+	if (a >= 1.0)
+		return 0.0;
+	else if (a <= -1.0)
+		return PI;
+	else
+		return acos(a); // 0..PI
+}
 
 }// namespace MathAux
