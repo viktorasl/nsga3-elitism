@@ -22,7 +22,8 @@ class CPopulation;
 class CNSGAIII
 {
 public:
-	explicit CNSGAIII();
+	CNSGAIII();
+	CNSGAIII(bool angle_based);
 	void Setup(std::ifstream &ifile);
 	void Solve(CPopulation *solutions, const BProblem &prob);
 
@@ -31,6 +32,7 @@ private:
 	std::string name_;
 	std::vector<std::size_t> obj_division_p_;
 	std::size_t gen_num_;
+	const bool angle_based;
 	double	pc_, // crossover rate
 			pm_, // mutation rate
 			eta_c_, // eta in SBX

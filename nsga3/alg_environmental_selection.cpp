@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize)
+void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -300,20 +300,21 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 	// ---------- Steps 9-10 in Algorithm 1 ----------
 	if (next.size() == PopSize) return;
 
+	if (!angle_based)
+	{
+		// ---------- Step 14 / Algorithm 2 ----------
+		vector<double> ideal_point = TranslateObjectives(&cur, fronts);
 
-	// ---------- Step 14 / Algorithm 2 ----------
-	vector<double> ideal_point = TranslateObjectives(&cur, fronts);
+		vector<size_t> extreme_points;
+		FindExtremePoints(&extreme_points, cur, fronts);
 
-	vector<size_t> extreme_points;
-	FindExtremePoints(&extreme_points, cur, fronts);
+		vector<double> intercepts;
+		ConstructHyperplane(&intercepts, cur, extreme_points);
 
-	vector<double> intercepts;
-	ConstructHyperplane(&intercepts, cur, extreme_points);
-
-	NormalizeObjectives(&cur, fronts, intercepts, ideal_point);
-
+		NormalizeObjectives(&cur, fronts, intercepts, ideal_point);
+	}
 	// ---------- Step 15 / Algorithm 3, Step 16 ----------
-	Associate(&rps, cur, fronts);
+	Associate(&rps, cur, fronts, angle_based);
 
 	// ---------- Step 17 / Algorithm 4 ----------
 	while (next.size() < PopSize)

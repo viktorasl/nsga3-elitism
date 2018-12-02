@@ -55,7 +55,7 @@ void GenerateReferencePoints(std::vector<CReferencePoint> *rps, std::size_t M, c
 // Associate individuals in the population with reference points.
 // Check Algorithm 3 in the original paper.
 class CPopulation;
-void Associate(std::vector<CReferencePoint> *prps, const CPopulation &pop, const CNondominatedSort::TFronts &fronts);
+void Associate(std::vector<CReferencePoint> *prps, const CPopulation &pop, const CNondominatedSort::TFronts &fronts, bool angle_based);
 // ----------------------------------------------------------------------------------
 
 #endif

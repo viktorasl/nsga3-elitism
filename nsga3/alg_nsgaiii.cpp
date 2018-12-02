@@ -17,14 +17,21 @@
 
 using namespace std;
 
-CNSGAIII::CNSGAIII(): 
+CNSGAIII::CNSGAIII(bool angle_based):
 	name_("NSGAIII"),
 	gen_num_(1),
 	pc_(1.0), // default setting in NSGA-III (IEEE tEC 2014)
 	eta_c_(30), // default setting
-	eta_m_(20) // default setting
+	eta_m_(20), // default setting
+	angle_based(angle_based)
 {
 }
+
+CNSGAIII::CNSGAIII():
+	CNSGAIII(false)
+{
+}
+
 // ----------------------------------------------------------------------
 void CNSGAIII::Setup(ifstream &ifile)
 {
@@ -90,7 +97,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem)
 			problem.Evaluate(&pop[cur][PopSize+i+1]);
 		}
 
-		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize);
+		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based);
 
 		//ShowPopulation(gplot, pop[next], "pop"); Sleep(50);
 
