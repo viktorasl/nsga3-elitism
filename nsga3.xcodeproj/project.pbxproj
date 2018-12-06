@@ -10,7 +10,6 @@
 		0375FBAF21AE75B5006DF4AF /* alg_mutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB8821AE75AF006DF4AF /* alg_mutation.cpp */; };
 		0375FBB021AE75B5006DF4AF /* alg_comparator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB8B21AE75B0006DF4AF /* alg_comparator.cpp */; };
 		0375FBB121AE75B5006DF4AF /* alg_nondominated_sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB8D21AE75B0006DF4AF /* alg_nondominated_sort.cpp */; };
-		0375FBB221AE75B5006DF4AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9121AE75B0006DF4AF /* main.cpp */; };
 		0375FBB321AE75B5006DF4AF /* exp_experiment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9421AE75B0006DF4AF /* exp_experiment.cpp */; };
 		0375FBB421AE75B5006DF4AF /* alg_individual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9721AE75B1006DF4AF /* alg_individual.cpp */; };
 		0375FBB521AE75B5006DF4AF /* problem_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0375FB9821AE75B1006DF4AF /* problem_factory.cpp */; };
@@ -81,6 +80,7 @@
 		0375FC3521AEAB17006DF4AF /* ZDT3-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFD21AEAA37006DF4AF /* ZDT3-PF.txt */; };
 		0375FC3621AEAB17006DF4AF /* DTLZ1(3)-PF.txt in Copy True Pareto fronts */ = {isa = PBXBuildFile; fileRef = 0375FBFE21AEAA37006DF4AF /* DTLZ1(3)-PF.txt */; };
 		0375FC3921AEAC68006DF4AF /* dummy in Copy Results folder */ = {isa = PBXBuildFile; fileRef = 0375FC3821AEAC59006DF4AF /* dummy */; };
+		03CB58F221B939E200D493CC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CB58F121B939E200D493CC /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -193,7 +193,6 @@
 		0375FB8E21AE75B0006DF4AF /* exp_indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exp_indicator.h; sourceTree = "<group>"; };
 		0375FB8F21AE75B0006DF4AF /* gnuplot_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gnuplot_interface.h; sourceTree = "<group>"; };
 		0375FB9021AE75B0006DF4AF /* problem_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_base.h; sourceTree = "<group>"; };
-		0375FB9121AE75B0006DF4AF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../Downloads/nsga3cpp1/src/main.cpp; sourceTree = "<group>"; };
 		0375FB9221AE75B0006DF4AF /* alg_nsgaiii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alg_nsgaiii.h; sourceTree = "<group>"; };
 		0375FB9321AE75B0006DF4AF /* problem_self.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = problem_self.h; sourceTree = "<group>"; };
 		0375FB9421AE75B0006DF4AF /* exp_experiment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exp_experiment.cpp; sourceTree = "<group>"; };
@@ -278,6 +277,7 @@
 		0375FBFD21AEAA37006DF4AF /* ZDT3-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ZDT3-PF.txt"; sourceTree = "<group>"; };
 		0375FBFE21AEAA37006DF4AF /* DTLZ1(3)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(3)-PF.txt"; sourceTree = "<group>"; };
 		0375FC3821AEAC59006DF4AF /* dummy */ = {isa = PBXFileReference; lastKnownFileType = text; path = dummy; sourceTree = "<group>"; };
+		03CB58F121B939E200D493CC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +314,7 @@
 		0375FB4121ADEFC9006DF4AF /* nsga3 */ = {
 			isa = PBXGroup;
 			children = (
+				03CB58F121B939E200D493CC /* main.cpp */,
 				0375FB8B21AE75B0006DF4AF /* alg_comparator.cpp */,
 				0375FB9521AE75B0006DF4AF /* alg_comparator.h */,
 				0375FB9A21AE75B1006DF4AF /* alg_crossover.cpp */,
@@ -345,7 +346,6 @@
 				0375FB8F21AE75B0006DF4AF /* gnuplot_interface.h */,
 				0375FB9F21AE75B2006DF4AF /* log.cpp */,
 				0375FBA421AE75B3006DF4AF /* log.h */,
-				0375FB9121AE75B0006DF4AF /* main.cpp */,
 				0375FB9021AE75B0006DF4AF /* problem_base.h */,
 				0375FBA121AE75B2006DF4AF /* problem_DTLZ.cpp */,
 				0375FB9621AE75B1006DF4AF /* problem_DTLZ.h */,
@@ -503,7 +503,7 @@
 				0375FBBD21AE75B5006DF4AF /* exp_indicator.cpp in Sources */,
 				0375FBB421AE75B5006DF4AF /* alg_individual.cpp in Sources */,
 				0375FBBA21AE75B5006DF4AF /* log.cpp in Sources */,
-				0375FBB221AE75B5006DF4AF /* main.cpp in Sources */,
+				03CB58F221B939E200D493CC /* main.cpp in Sources */,
 				0375FBB021AE75B5006DF4AF /* alg_comparator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
