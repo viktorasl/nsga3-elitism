@@ -58,7 +58,7 @@ int main()
             CPopulation solutions;
 
 //            clock_gettime(CLOCK_MONOTONIC, &start);
-            nsgaiii.Solve(&solutions, *problem);
+            nsgaiii.Solve(&solutions, *problem, is_improved_version);
 //            clock_gettime(CLOCK_MONOTONIC, &end);
 //            print_timediff("NSGA-III", start, end);
 

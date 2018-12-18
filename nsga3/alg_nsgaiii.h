@@ -25,7 +25,7 @@ public:
 	CNSGAIII();
 	CNSGAIII(bool angle_based);
 	void Setup(std::ifstream &ifile);
-	void Solve(CPopulation *solutions, const BProblem &prob);
+	void Solve(CPopulation *solutions, const BProblem &prob, bool improved_version);
 
 	const std::string & name() const { return name_; }
 private:

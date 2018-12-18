@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based)
+void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -317,10 +317,17 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 	Associate(&rps, cur, fronts, angle_based);
 
 	// ---------- Step 17 / Algorithm 4 ----------
+	size_t next_rp = 0;
 	while (next.size() < PopSize)
 	{
-		size_t min_rp = FindNicheReferencePoint(rps);
-
+		size_t min_rp = 0;
+		if (fronts.size() == 1 && improved_version && next_rp < rps.size())
+		{
+			min_rp = next_rp;
+			next_rp+=1;
+		} else {
+			min_rp = FindNicheReferencePoint(rps);
+		}
 		int chosen = SelectClusterMember(rps[min_rp]);
 		if (chosen < 0) // no potential member in Fl, disregard this reference point
 		{

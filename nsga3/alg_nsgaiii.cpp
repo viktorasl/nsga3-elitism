@@ -54,7 +54,7 @@ void CNSGAIII::Setup(ifstream &ifile)
 	ifile >> dummy >> dummy >> eta_m_;
 }
 // ----------------------------------------------------------------------
-void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem)
+void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool improved_version)
 {
 	CIndividual::SetTargetProblem(problem);
 	
@@ -97,7 +97,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem)
 			problem.Evaluate(&pop[cur][PopSize+i+1]);
 		}
 
-		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based);
+		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based, improved_version);
 
 		//ShowPopulation(gplot, pop[next], "pop"); Sleep(50);
 

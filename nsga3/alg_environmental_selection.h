@@ -17,6 +17,7 @@ void EnvironmentalSelection(CPopulation *pnext, // population in the next genera
 							CPopulation *pcur,  // population in the current generation
 							std::vector<CReferencePoint> rps, // the set of reference points
 							std::size_t PopSize,
-							bool angle_based);
+							bool angle_based,
+							bool improved_version);
 
 #endif
