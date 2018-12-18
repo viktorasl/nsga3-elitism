@@ -43,7 +43,8 @@ int main()
 
         SetupExperiment(nsgaiii, &problem, exp_ini);
         Gnuplot gplot;
-        ofstream IGD_results(nsgaiii.name() + "-" + problem->name() + "-IGD.txt"); // output file for IGD values per run
+        string out_problem_name = (is_improved_version ? improved_prefix : "") + problem->name();
+        ofstream IGD_results(nsgaiii.name() + "-" + out_problem_name + "-IGD.txt"); // output file for IGD values per run
 
 
         // ----- Run the algorithm to solve the designated function -----
@@ -63,7 +64,7 @@ int main()
 //            print_timediff("NSGA-III", start, end);
 
             // --- Output the result
-            string logfname = "Results/" + nsgaiii.name() + "-" + (is_improved_version ? improved_prefix : "") + problem->name() + "-Run" + IntToStr(r) + ".txt"; // e.g. NSGAIII-DTLZ1(3)-Run0.txt
+            string logfname = "Results/" + nsgaiii.name() + "-" + out_problem_name + "-Run" + IntToStr(r) + ".txt"; // e.g. NSGAIII-DTLZ1(3)-Run0.txt
             SaveScatterData(logfname, solutions);
 
             // --- Calculate the performance metric
