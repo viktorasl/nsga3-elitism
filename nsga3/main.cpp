@@ -25,8 +25,15 @@ int main()
     if (!exp_list) { cout << "We need the explist.ini file." << endl; return 1; }
 
     string exp_name;
+    string improved_prefix = "IMP_";
     while (exp_list >> exp_name)
     {
+        bool is_improved_version = false;
+        if (!exp_name.compare(0, improved_prefix.size(), improved_prefix))
+        {
+            is_improved_version = true;
+            exp_name.erase(0, improved_prefix.size());
+        }
         ifstream exp_ini("Experiments/" + exp_name);
         if (!exp_ini) { cout << exp_name << " file does not exist." << endl; continue; }
 
@@ -45,7 +52,7 @@ int main()
         {
 //            struct timespec start, end;
 
-            srand(r); cout << "Solving " << problem->name() << " ... Run: " << r << endl;
+            srand(r); cout << "Solving " << problem->name() << (is_improved_version ? "(w/ improved algo)" : "") << " ... Run: " << r << endl;
 
             // --- Solve
             CPopulation solutions;
@@ -56,7 +63,7 @@ int main()
 //            print_timediff("NSGA-III", start, end);
 
             // --- Output the result
-            string logfname = "Results/" + nsgaiii.name() + "-" + problem->name() + "-Run" + IntToStr(r) + ".txt"; // e.g. NSGAIII-DTLZ1(3)-Run0.txt
+            string logfname = "Results/" + nsgaiii.name() + "-" + (is_improved_version ? improved_prefix : "") + problem->name() + "-Run" + IntToStr(r) + ".txt"; // e.g. NSGAIII-DTLZ1(3)-Run0.txt
             SaveScatterData(logfname, solutions);
 
             // --- Calculate the performance metric
