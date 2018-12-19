@@ -324,7 +324,6 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 		if (fronts.size() == 1 && improved_version && next_rp < rps.size())
 		{
 			min_rp = next_rp;
-			next_rp+=1;
 		} else {
 			min_rp = FindNicheReferencePoint(rps);
 		}
@@ -338,6 +337,7 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 			rps[min_rp].AddMember();
 			rps[min_rp].RemovePotentialMember(chosen);
 			next.push_back(cur[chosen]);
+			next_rp+=1;
 		}
 	}
 
