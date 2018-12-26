@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version)
+void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -316,6 +316,12 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 	// ---------- Step 15 / Algorithm 3, Step 16 ----------
 	Associate(&rps, cur, fronts, angle_based);
 
+	vector<CReferencePoint*> pt_rps;
+	for (auto& indv : rps)
+	{
+		pt_rps.push_back(&indv);
+	}
+	
 	// ---------- Step 17 / Algorithm 4 ----------
 	size_t next_rp = 0;
 	while (next.size() < PopSize)
@@ -334,9 +340,32 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 		}
 		else
 		{
+			auto chosen_member = cur[chosen];
+			
+			auto pt_rp = find(pt_rps.begin(), pt_rps.end(), &rps[min_rp]);
+			if (pt_rp == pt_rps.end())
+			{
+				assert("Could not find reference point");
+			}
+			auto pt_rp_idx = distance(pt_rps.begin(), pt_rp);
+			auto elite = elites[pt_rp_idx];
+			if (elite.vars()[0] != 0)
+			{
+				double current = MathAux::length(elite.objs());
+				double potential = MathAux::length(chosen_member.objs());
+				if (potential < current)
+				{
+					elites[pt_rp_idx] = chosen_member;
+				}
+			}
+			else
+			{
+				elites[pt_rp_idx] = chosen_member;
+			}
+			
 			rps[min_rp].AddMember();
 			rps[min_rp].RemovePotentialMember(chosen);
-			next.push_back(cur[chosen]);
+			next.push_back(chosen_member);
 			next_rp+=1;
 		}
 	}

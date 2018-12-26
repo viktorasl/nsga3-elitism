@@ -22,6 +22,8 @@ void GuassianElimination(std::vector<double> *px, std::vector< std::vector<doubl
 double PerpendicularDistance(const std::vector<double> &direction, const std::vector<double> &point);
 	
 double Angle(const std::vector<double> &direction, const std::vector<double> &point);
+
+double length(const std::vector<double> &vector);
 }
 
 #endif
