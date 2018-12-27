@@ -111,6 +111,7 @@ int main()
             // --- Calculate the performance metric
             TFront PF, approximation;
             double igd_value = IGD(LoadFront(PF, "PF/"+ problem->name() + "-PF.txt"), LoadFront(approximation, logfname));
+			cout << igd_value << endl;
             igd_values.push_back(igd_value);
             IGD_results << igd_value << endl;
 

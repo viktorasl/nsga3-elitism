@@ -86,7 +86,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 
 		for (size_t i=0; i<PopSize; i+=2)
 		{
-			int from_elites = rand()%3 == 0;
+			int from_elites = t > 0 && rand()%3 == 0;
 			if (from_elites)
 			{
 				int elite_father = rand()%rps.size(),
@@ -118,7 +118,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 			problem.Evaluate(&pop[cur][PopSize+i+1]);
 		}
 
-		EnvironmentalSelection(&pop[next], &pop[cur], rps, elites, PopSize, angle_based, improved_version);
+		EnvironmentalSelection(t, &pop[next], &pop[cur], rps, elites, PopSize, angle_based, improved_version);
 
 		//ShowPopulation(gplot, pop[next], "pop"); Sleep(50);
 
