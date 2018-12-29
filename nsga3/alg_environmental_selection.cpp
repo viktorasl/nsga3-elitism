@@ -324,6 +324,8 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 	
 	// ---------- Step 17 / Algorithm 4 ----------
 	size_t next_rp = 0;
+	size_t elites_used = 0;
+	size_t elites_updated = 0;
 	while (next.size() < PopSize)
 	{
 		size_t min_rp = 0;
@@ -357,14 +359,25 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 				double elite_dst = MathAux::PerpendicularDistance(rps[min_rp].pos(), elite.objs());
 				double member_dst = MathAux::PerpendicularDistance(rps[min_rp].pos(), chosen_member.objs());
 				
+				bool ignore = rand() % 2;
+				
 				bool new_is_better = ((member_length < elite_length) || (member_dst < elite_dst));
-				next.push_back(new_is_better ? chosen_member : elite);
+				if (new_is_better)
+				{
+					next.push_back(chosen_member);
+				}
+				else
+				{
+					next.push_back(elite);
+					elites_used++;
+				}
 				
 				// elite preservation natural selection member advantage coeficient
 				float mmb_adv = (rand() % 2 == 0) ? 1.1 : 1.3;
 				if (member_length < elite_length * mmb_adv && member_dst < elite_dst * mmb_adv)
 				{
 					elites[pt_rp_idx] = chosen_member;
+					elites_updated++;
 				}
 			}
 			else
@@ -378,6 +391,6 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 			next_rp+=1;
 		}
 	}
-
+	cout << elites_used << " " << elites_updated << endl;
 }
 // ----------------------------------------------------------------------
