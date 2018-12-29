@@ -14,6 +14,7 @@
 
 #include <vector>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -78,7 +79,10 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 	{
 		problem.Evaluate(&pop[cur][i]);
 	}
-
+	
+	size_t first_it_max_entropy = -1;
+	size_t it_from_which_max_entropy = -1;
+	const double max_entropy = log(rps.size());
 	for (size_t t=0; t<gen_num_; t+=1)
 	{
 		pop[cur].resize(PopSize*2);
@@ -97,12 +101,43 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 			problem.Evaluate(&pop[cur][PopSize+i+1]);
 		}
 
-		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based, improved_version);
+		std::vector<int> rps_members;
+		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based, improved_version, rps_members);
 
+		double entropy = 0.0;
+		for (auto members_count : rps_members) {
+			if (members_count == 0)
+			{
+				continue;
+			}
+			double probability = (double)members_count / (double)rps_members.size();
+			entropy -= probability * log(probability);
+		}
+		
+		if (abs(max_entropy - entropy) < 10e-10)
+		{
+			if (first_it_max_entropy == -1)
+			{
+				first_it_max_entropy = t;
+			}
+			if (it_from_which_max_entropy == -1)
+			{
+				it_from_which_max_entropy = t;
+			}
+		}
+		else
+		{
+			it_from_which_max_entropy = -1;
+		}
+		cout << entropy << endl;
 		//ShowPopulation(gplot, pop[next], "pop"); Sleep(50);
 
 		std::swap(cur, next);
 	}
-
+	cout << "Iterations: " << gen_num_ << endl;
+	cout << "Max entropy: " << max_entropy << endl;
+	cout << "First max entropy: " << first_it_max_entropy << endl;
+	cout << "All max entropy: " << it_from_which_max_entropy << endl;
+	
 	*solutions = pop[cur];
 }

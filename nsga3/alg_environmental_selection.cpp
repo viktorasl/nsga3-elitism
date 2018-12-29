@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version)
+void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version, vector<int>& rps_members)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -318,6 +318,14 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 
 	// ---------- Step 17 / Algorithm 4 ----------
 	size_t next_rp = 0;
+	
+	vector<CReferencePoint*> pt_rps;
+	for (auto& indv : rps)
+	{
+		pt_rps.push_back(&indv);
+	}
+	rps_members.resize(rps.size(), 0);
+	
 	while (next.size() < PopSize)
 	{
 		size_t min_rp = 0;
@@ -334,12 +342,19 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 		}
 		else
 		{
+			auto pt_rp = find(pt_rps.begin(), pt_rps.end(), &rps[min_rp]);
+			if (pt_rp == pt_rps.end())
+			{
+				assert("Could not find reference point");
+			}
+			auto pt_rp_idx = distance(pt_rps.begin(), pt_rp);
+			rps_members[pt_rp_idx] = (rps_members[pt_rp_idx] + 1);
+			
 			rps[min_rp].AddMember();
 			rps[min_rp].RemovePotentialMember(chosen);
 			next.push_back(cur[chosen]);
 			next_rp+=1;
 		}
 	}
-
 }
 // ----------------------------------------------------------------------
