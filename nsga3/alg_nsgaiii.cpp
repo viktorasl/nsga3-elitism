@@ -86,26 +86,6 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 
 		for (size_t i=0; i<PopSize; i+=2)
 		{
-			int from_elites = t > 0 && rand()%3 == 0;
-			if (from_elites)
-			{
-				int elite_father = rand()%rps.size(),
-					elite_mother = rand()%rps.size();
-				auto father = elites[elite_father];
-				auto mother = elites[elite_mother];
-				if (father.vars()[0] != 0)
-				{
-					SBX(&pop[cur][PopSize+i], &pop[cur][PopSize+i+1], father, pop[cur][ rand()%PopSize ]);
-
-					PolyMut(&pop[cur][PopSize+i]);
-					PolyMut(&pop[cur][PopSize+i+1]);
-
-					problem.Evaluate(&pop[cur][PopSize+i]);
-					problem.Evaluate(&pop[cur][PopSize+i+1]);
-					continue;
-				}
-			}
-			
 			int father = rand()%PopSize,
 				mother = rand()%PopSize;
 

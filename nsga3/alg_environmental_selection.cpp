@@ -351,9 +351,18 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 			auto elite = elites[pt_rp_idx];
 			if (elite.vars()[0] != 0)
 			{
-				double current = MathAux::length(elite.objs());
-				double potential = MathAux::length(chosen_member.objs());
-				if (potential < current)
+				double elite_length = MathAux::length(elite.objs());
+				double member_length = MathAux::length(chosen_member.objs());
+				
+				double elite_dst = MathAux::PerpendicularDistance(rps[min_rp].pos(), elite.objs());
+				double member_dst = MathAux::PerpendicularDistance(rps[min_rp].pos(), chosen_member.objs());
+				
+				bool new_is_better = ((member_length < elite_length) || (member_dst < elite_dst));
+				next.push_back(new_is_better ? chosen_member : elite);
+				
+				// elite preservation natural selection member advantage coeficient
+				float mmb_adv = (rand() % 2 == 0) ? 1.1 : 1.3;
+				if (member_length < elite_length * mmb_adv && member_dst < elite_dst * mmb_adv)
 				{
 					elites[pt_rp_idx] = chosen_member;
 				}
@@ -361,11 +370,11 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 			else
 			{
 				elites[pt_rp_idx] = chosen_member;
+				next.push_back(chosen_member);
 			}
 			
 			rps[min_rp].AddMember();
 			rps[min_rp].RemovePotentialMember(chosen);
-			next.push_back(chosen_member);
 			next_rp+=1;
 		}
 	}
