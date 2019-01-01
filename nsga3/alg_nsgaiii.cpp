@@ -85,6 +85,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 	size_t first_it_max_entropy = -1;
 	size_t it_from_which_max_entropy = -1;
 	const double max_entropy = log(rps.size());
+	vector<CIndividual> elites(rps.size());
 	for (size_t t=0; t<gen_num_; t+=1)
 	{
 		pop[cur].resize(PopSize*2);
@@ -104,7 +105,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 		}
 
 		std::vector<int> rps_members;
-		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based, improved_version, analysis, rps_members);
+		EnvironmentalSelection(t, &pop[next], &pop[cur], rps, elites, PopSize, angle_based, improved_version, analysis, rps_members);
 
 		if (analysis & NSGAIIIAnalysis::Entropy)
 		{

@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members)
+void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -329,6 +329,8 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 		rps_members.resize(rps.size(), 0);
 	}
 	
+	size_t elites_used = 0;
+	size_t elites_updated = 0;
 	while (next.size() < PopSize)
 	{
 		size_t min_rp = 0;
@@ -353,11 +355,48 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 				rps_members[pt_rp_idx] = (rps_members[pt_rp_idx] + 1);
 			}
 			
+			auto chosen_member = cur[chosen];
+			auto elite = elites[pt_rp_idx];
+			if (elite.vars()[0] != 0)
+			{
+				double elite_length = MathAux::length(elite.objs());
+				double member_length = MathAux::length(chosen_member.objs());
+				
+				double elite_dst = MathAux::PerpendicularDistance(rps[min_rp].pos(), elite.objs());
+				double member_dst = MathAux::PerpendicularDistance(rps[min_rp].pos(), chosen_member.objs());
+				
+				bool ignore = rand() % 2;
+				
+				bool new_is_better = ((member_length < elite_length) || (member_dst < elite_dst));
+				if (new_is_better)
+				{
+					next.push_back(chosen_member);
+				}
+				else
+				{
+					next.push_back(elite);
+					elites_used++;
+				}
+				
+				// elite preservation natural selection member advantage coeficient
+				float mmb_adv = (rand() % 2 == 0) ? 1.1 : 1.3;
+				if (member_length < elite_length * mmb_adv && member_dst < elite_dst * mmb_adv)
+				{
+					elites[pt_rp_idx] = chosen_member;
+					elites_updated++;
+				}
+			}
+			else
+			{
+				elites[pt_rp_idx] = chosen_member;
+				next.push_back(chosen_member);
+			}
+			
 			rps[min_rp].AddMember();
 			rps[min_rp].RemovePotentialMember(chosen);
-			next.push_back(cur[chosen]);
 			next_rp+=1;
 		}
 	}
+	cout << elites_used << " " << elites_updated << endl;
 }
 // ----------------------------------------------------------------------
