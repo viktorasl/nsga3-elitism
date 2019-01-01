@@ -278,6 +278,7 @@
 		0375FBFE21AEAA37006DF4AF /* DTLZ1(3)-PF.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DTLZ1(3)-PF.txt"; sourceTree = "<group>"; };
 		0375FC3821AEAC59006DF4AF /* dummy */ = {isa = PBXFileReference; lastKnownFileType = text; path = dummy; sourceTree = "<group>"; };
 		03CB58F121B939E200D493CC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		03F3649221DC20B700F942F0 /* alg_analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alg_analysis.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +356,7 @@
 				0375FB9321AE75B0006DF4AF /* problem_self.h */,
 				0375FBA221AE75B2006DF4AF /* problem_ZDT.cpp */,
 				0375FB9921AE75B1006DF4AF /* problem_ZDT.h */,
+				03F3649221DC20B700F942F0 /* alg_analysis.h */,
 			);
 			path = nsga3;
 			sourceTree = "<group>";

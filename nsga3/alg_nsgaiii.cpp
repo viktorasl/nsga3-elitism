@@ -8,6 +8,7 @@
 #include "alg_crossover.h"
 #include "alg_mutation.h"
 #include "alg_environmental_selection.h"
+#include "alg_analysis.h"
 
 #include "gnuplot_interface.h"
 #include "log.h"
@@ -57,6 +58,7 @@ void CNSGAIII::Setup(ifstream &ifile)
 // ----------------------------------------------------------------------
 void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool improved_version)
 {
+	auto analysis = NSGAIIIAnalysis::Entropy;
 	CIndividual::SetTargetProblem(problem);
 	
 	vector<CReferencePoint> rps;
@@ -102,42 +104,48 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 		}
 
 		std::vector<int> rps_members;
-		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based, improved_version, rps_members);
+		EnvironmentalSelection(&pop[next], &pop[cur], rps, PopSize, angle_based, improved_version, analysis, rps_members);
 
-		double entropy = 0.0;
-		for (auto members_count : rps_members) {
-			if (members_count == 0)
-			{
-				continue;
-			}
-			double probability = (double)members_count / (double)rps_members.size();
-			entropy -= probability * log(probability);
-		}
-		
-		if (abs(max_entropy - entropy) < 10e-10)
+		if (analysis & NSGAIIIAnalysis::Entropy)
 		{
-			if (first_it_max_entropy == -1)
-			{
-				first_it_max_entropy = t;
+			double entropy = 0.0;
+			for (auto members_count : rps_members) {
+				if (members_count == 0)
+				{
+					continue;
+				}
+				double probability = (double)members_count / (double)rps_members.size();
+				entropy -= probability * log(probability);
 			}
-			if (it_from_which_max_entropy == -1)
+			
+			if (abs(max_entropy - entropy) < 10e-10)
 			{
-				it_from_which_max_entropy = t;
+				if (first_it_max_entropy == -1)
+				{
+					first_it_max_entropy = t;
+				}
+				if (it_from_which_max_entropy == -1)
+				{
+					it_from_which_max_entropy = t;
+				}
 			}
+			else
+			{
+				it_from_which_max_entropy = -1;
+			}
+			cout << entropy << endl;
 		}
-		else
-		{
-			it_from_which_max_entropy = -1;
-		}
-		cout << entropy << endl;
 		//ShowPopulation(gplot, pop[next], "pop"); Sleep(50);
 
 		std::swap(cur, next);
 	}
-	cout << "Iterations: " << gen_num_ << endl;
-	cout << "Max entropy: " << max_entropy << endl;
-	cout << "First max entropy: " << first_it_max_entropy << endl;
-	cout << "All max entropy: " << it_from_which_max_entropy << endl;
+	if (analysis & NSGAIIIAnalysis::Entropy)
+	{
+		cout << "Iterations: " << gen_num_ << endl;
+		cout << "Max entropy: " << max_entropy << endl;
+		cout << "First max entropy: " << first_it_max_entropy << endl;
+		cout << "All max entropy: " << it_from_which_max_entropy << endl;
+	}
 	
 	*solutions = pop[cur];
 }

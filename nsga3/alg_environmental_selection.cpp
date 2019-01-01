@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version, vector<int>& rps_members)
+void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -324,7 +324,10 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 	{
 		rps_indices.push_back(i);
 	}
-	rps_members.resize(rps.size(), 0);
+	if (analysis & NSGAIIIAnalysis::Entropy)
+	{
+		rps_members.resize(rps.size(), 0);
+	}
 	
 	while (next.size() < PopSize)
 	{
@@ -345,7 +348,10 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 		}
 		else
 		{
-			rps_members[pt_rp_idx] = (rps_members[pt_rp_idx] + 1);
+			if (analysis & NSGAIIIAnalysis::Entropy)
+			{
+				rps_members[pt_rp_idx] = (rps_members[pt_rp_idx] + 1);
+			}
 			
 			rps[min_rp].AddMember();
 			rps[min_rp].RemovePotentialMember(chosen);
