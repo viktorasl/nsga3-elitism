@@ -271,7 +271,7 @@ int SelectClusterMember(const CReferencePoint &rp)
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members)
+void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members, vector<size_t>& set_at)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -371,6 +371,10 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 				if (new_is_better)
 				{
 					next.push_back(chosen_member);
+					if (analysis & NSGAIIIAnalysis::ElitesUpdateTracking)
+					{
+						set_at[pt_rp_idx] = t;
+					}
 				}
 				else
 				{

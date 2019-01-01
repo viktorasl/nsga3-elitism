@@ -3,9 +3,10 @@
 
 enum class NSGAIIIAnalysis
 {
-	None                   = 0b0,
-	Entropy                = 0b1,
-	ElitesUsedAndUpdated   = 0b10
+	None                   = 0b000,
+	Entropy                = 0b001,
+	ElitesUsedAndUpdated   = 0b010,
+	ElitesUpdateTracking   = 0b100,
 };
 
 inline NSGAIIIAnalysis operator | (NSGAIIIAnalysis lhs, NSGAIIIAnalysis rhs)

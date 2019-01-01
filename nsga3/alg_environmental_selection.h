@@ -23,6 +23,7 @@ void EnvironmentalSelection(size_t t,
 							bool angle_based,
 							bool improved_version,
 							NSGAIIIAnalysis analysis,
-							std::vector<int>& rps_members);
+							std::vector<int>& rps_members,
+							std::vector<size_t>& set_at);
 
 #endif
