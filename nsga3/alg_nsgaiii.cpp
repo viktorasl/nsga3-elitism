@@ -58,7 +58,7 @@ void CNSGAIII::Setup(ifstream &ifile)
 // ----------------------------------------------------------------------
 void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool improved_version)
 {
-	auto analysis = NSGAIIIAnalysis::Entropy;
+	auto analysis = NSGAIIIAnalysis::None;
 	CIndividual::SetTargetProblem(problem);
 	
 	vector<CReferencePoint> rps;

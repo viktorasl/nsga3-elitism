@@ -397,6 +397,10 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 			next_rp+=1;
 		}
 	}
-	cout << elites_used << " " << elites_updated << endl;
+	
+	if (analysis & NSGAIIIAnalysis::ElitesUsedAndUpdated)
+	{
+		cout << elites_used << " " << elites_updated << endl;
+	}
 }
 // ----------------------------------------------------------------------
