@@ -319,10 +319,10 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 	// ---------- Step 17 / Algorithm 4 ----------
 	size_t next_rp = 0;
 	
-	vector<CReferencePoint*> pt_rps;
-	for (auto& indv : rps)
+	vector<size_t> rps_indices;
+	for (size_t i=0; i<rps.size(); i+=1)
 	{
-		pt_rps.push_back(&indv);
+		rps_indices.push_back(i);
 	}
 	rps_members.resize(rps.size(), 0);
 	
@@ -335,19 +335,16 @@ void EnvironmentalSelection(CPopulation *pnext, CPopulation *pcur, vector<CRefer
 		} else {
 			min_rp = FindNicheReferencePoint(rps);
 		}
+		auto pt_rp_idx = rps_indices[min_rp];
+		
 		int chosen = SelectClusterMember(rps[min_rp]);
 		if (chosen < 0) // no potential member in Fl, disregard this reference point
 		{
 			rps.erase(rps.begin()+min_rp);
+			rps_indices.erase(rps_indices.begin()+min_rp);
 		}
 		else
 		{
-			auto pt_rp = find(pt_rps.begin(), pt_rps.end(), &rps[min_rp]);
-			if (pt_rp == pt_rps.end())
-			{
-				assert("Could not find reference point");
-			}
-			auto pt_rp_idx = distance(pt_rps.begin(), pt_rp);
 			rps_members[pt_rp_idx] = (rps_members[pt_rp_idx] + 1);
 			
 			rps[min_rp].AddMember();
