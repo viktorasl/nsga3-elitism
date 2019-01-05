@@ -266,12 +266,27 @@ int SelectClusterMember(const CReferencePoint &rp)
 	return chosen;
 }
 
+void AppendPopulationMember(CPopulation& next, CIndividual& indv, NSGAIIIAnalysis analysis, size_t t, vector<pair<size_t, double>>& best_objs)
+{
+	next.push_back(indv);
+	if (analysis & NSGAIIIAnalysis::ObjValIterationSetter)
+	{
+		for (size_t i=0; i<indv.objs().size(); i+=1)
+		{
+			if (indv.objs()[i] < best_objs[i].second)
+			{
+				best_objs[i] = make_pair(t, indv.objs()[i]);
+			}
+		}
+	}
+}
+
 // ----------------------------------------------------------------------
 // EnvironmentalSelection():
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members, vector<size_t>& set_at)
+void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members, vector<size_t>& set_at, vector<pair<size_t, double>>& best_objs)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -293,7 +308,7 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 	{
 		for (size_t i=0; i<fronts[t].size(); i+=1)
 		{
-			next.push_back(cur[ fronts[t][i] ]);
+			AppendPopulationMember(next, cur[ fronts[t][i] ], analysis, t, best_objs);
 		}
 	}
 
@@ -370,7 +385,7 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 				bool new_is_better = ((member_length < elite_length) || (member_dst < elite_dst));
 				if (new_is_better)
 				{
-					next.push_back(chosen_member);
+					AppendPopulationMember(next, chosen_member, analysis, t, best_objs);
 					if (analysis & NSGAIIIAnalysis::ElitesUpdateTracking)
 					{
 						set_at[pt_rp_idx] = t;
@@ -378,7 +393,7 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 				}
 				else
 				{
-					next.push_back(elite);
+					AppendPopulationMember(next, elite, analysis, t, best_objs);
 					elites_used++;
 				}
 				
@@ -393,7 +408,7 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 			else
 			{
 				elites[pt_rp_idx] = chosen_member;
-				next.push_back(chosen_member);
+				AppendPopulationMember(next, chosen_member, analysis, t, best_objs);
 			}
 			
 			rps[min_rp].AddMember();

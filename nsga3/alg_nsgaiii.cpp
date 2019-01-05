@@ -87,6 +87,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 	const double max_entropy = log(rps.size());
 	vector<CIndividual> elites(rps.size());
 	vector<size_t> set_at(rps.size(), -1);
+	std::vector<std::pair<size_t, double>> best_objs(pop[cur][0].objs().size(), make_pair(-1, numeric_limits<double>::max()));
 	for (size_t t=0; t<gen_num_; t+=1)
 	{
 		pop[cur].resize(PopSize*2);
@@ -106,7 +107,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 		}
 
 		std::vector<int> rps_members;
-		EnvironmentalSelection(t, &pop[next], &pop[cur], rps, elites, PopSize, angle_based, improved_version, analysis, rps_members, set_at);
+		EnvironmentalSelection(t, &pop[next], &pop[cur], rps, elites, PopSize, angle_based, improved_version, analysis, rps_members, set_at, best_objs);
 
 		if (analysis & NSGAIIIAnalysis::Entropy)
 		{
@@ -141,6 +142,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 
 		std::swap(cur, next);
 	}
+	
 	if (analysis & NSGAIIIAnalysis::Entropy)
 	{
 		cout << "Iterations: " << gen_num_ << endl;
@@ -154,6 +156,14 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 		for (size_t i=0; i<set_at.size(); i+=1)
 		{
 			cout << i << " " << set_at[i] << endl;
+		}
+	}
+	
+	if (analysis & NSGAIIIAnalysis::ObjValIterationSetter)
+	{
+		for (size_t i=0; i<best_objs.size(); i+=1)
+		{
+			cout << i+1 << " " << best_objs[i].first << endl;
 		}
 	}
 

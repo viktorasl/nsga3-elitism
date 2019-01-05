@@ -24,6 +24,7 @@ void EnvironmentalSelection(size_t t,
 							bool improved_version,
 							NSGAIIIAnalysis analysis,
 							std::vector<int>& rps_members,
-							std::vector<size_t>& set_at);
+							std::vector<size_t>& set_at,
+							std::vector<std::pair<size_t, double>>& best_objs);
 
 #endif
