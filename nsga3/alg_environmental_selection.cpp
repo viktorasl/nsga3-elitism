@@ -286,7 +286,7 @@ void AppendPopulationMember(CPopulation& next, CIndividual& indv, NSGAIIIAnalysi
 //
 // Check Algorithms 1-4 in the original paper.
 // ----------------------------------------------------------------------
-void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool angle_based, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members, vector<size_t>& set_at, vector<pair<size_t, double>>& best_objs)
+void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vector<CReferencePoint> rps, vector<CIndividual>& elites, size_t PopSize, bool improved_version, NSGAIIIAnalysis analysis, vector<int>& rps_members, vector<size_t>& set_at, vector<pair<size_t, double>>& best_objs)
 {
 	CPopulation &cur = *pcur, &next = *pnext;
 	next.clear();
@@ -315,21 +315,19 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 	// ---------- Steps 9-10 in Algorithm 1 ----------
 	if (next.size() == PopSize) return;
 
-	if (!angle_based)
-	{
-		// ---------- Step 14 / Algorithm 2 ----------
-		vector<double> ideal_point = TranslateObjectives(&cur, fronts);
+    // ---------- Step 14 / Algorithm 2 ----------
+    vector<double> ideal_point = TranslateObjectives(&cur, fronts);
 
-		vector<size_t> extreme_points;
-		FindExtremePoints(&extreme_points, cur, fronts);
+    vector<size_t> extreme_points;
+    FindExtremePoints(&extreme_points, cur, fronts);
 
-		vector<double> intercepts;
-		ConstructHyperplane(&intercepts, cur, extreme_points);
+    vector<double> intercepts;
+    ConstructHyperplane(&intercepts, cur, extreme_points);
 
-		NormalizeObjectives(&cur, fronts, intercepts, ideal_point);
-	}
+    NormalizeObjectives(&cur, fronts, intercepts, ideal_point);
+
 	// ---------- Step 15 / Algorithm 3, Step 16 ----------
-	Associate(&rps, cur, fronts, angle_based);
+	Associate(&rps, cur, fronts);
 
 	// ---------- Step 17 / Algorithm 4 ----------
 	size_t next_rp = 0;

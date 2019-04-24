@@ -144,21 +144,4 @@ double dotProduct(const vector<double> &v1, const vector<double> &v2)
 	return mulSum;
 }
 
-double Angle(const vector<double> &direction, const vector<double> &point)
-{
-	float length1 = length(direction);// calculate modulus of Vector V1 i.e. |V1|
-	float length2 = length(point);
-	// calculate modulus of Vector V2 i.e. |V2|
-	float dot = dotProduct(direction, point); // calculate dot product between two vectors.
-	
-	float a = dot / (length1 * length2);
-	
-	if (a >= 1.0)
-		return 0.0;
-	else if (a <= -1.0)
-		return PI;
-	else
-		return acos(a); // 0..PI
-}
-
 }// namespace MathAux

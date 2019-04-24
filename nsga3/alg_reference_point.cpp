@@ -110,7 +110,7 @@ void GenerateReferencePoints(vector<CReferencePoint> *rps, size_t M, const std::
 }
 
 // ----------------------------------------------------------------------
-void Associate(std::vector<CReferencePoint> *prps, const CPopulation &pop, const CNondominatedSort::TFronts &fronts, bool angle_based)
+void Associate(std::vector<CReferencePoint> *prps, const CPopulation &pop, const CNondominatedSort::TFronts &fronts)
 {
 	std::vector<CReferencePoint> &rps = *prps;
 
@@ -123,10 +123,7 @@ void Associate(std::vector<CReferencePoint> *prps, const CPopulation &pop, const
 			for (size_t r=0; r<rps.size(); r+=1)
 			{
 				const vector<double> &direction = rps[r].pos();
-				double d = angle_based ?
-					MathAux::Angle(direction, pop[ fronts[t][i] ].objs())
-					:
-					MathAux::PerpendicularDistance(direction, pop[ fronts[t][i] ].conv_objs());
+				double d = MathAux::PerpendicularDistance(direction, pop[ fronts[t][i] ].conv_objs());
 				
 				if (d < min_dist)
 				{

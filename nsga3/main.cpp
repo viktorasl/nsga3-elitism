@@ -76,7 +76,7 @@ int main()
         if (!exp_ini) { cout << exp_name << " file does not exist." << endl; continue; }
 
         // ----- Setup the expriment ------
-        CNSGAIII nsgaiii(false);
+        CNSGAIII nsgaiii;
         BProblem *problem = 0;
 
         SetupExperiment(nsgaiii, &problem, exp_ini);

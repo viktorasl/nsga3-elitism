@@ -19,18 +19,12 @@
 
 using namespace std;
 
-CNSGAIII::CNSGAIII(bool angle_based):
+CNSGAIII::CNSGAIII():
 	name_("NSGAIII"),
 	gen_num_(1),
 	pc_(1.0), // default setting in NSGA-III (IEEE tEC 2014)
 	eta_c_(30), // default setting
-	eta_m_(20), // default setting
-	angle_based(angle_based)
-{
-}
-
-CNSGAIII::CNSGAIII():
-	CNSGAIII(false)
+	eta_m_(20) // default setting
 {
 }
 
@@ -107,7 +101,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 		}
 
 		std::vector<int> rps_members;
-		EnvironmentalSelection(t, &pop[next], &pop[cur], rps, elites, PopSize, angle_based, improved_version, analysis, rps_members, set_at, best_objs);
+		EnvironmentalSelection(t, &pop[next], &pop[cur], rps, elites, PopSize, improved_version, analysis, rps_members, set_at, best_objs);
 
 		if (analysis & NSGAIIIAnalysis::Entropy)
 		{
