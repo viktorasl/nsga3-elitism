@@ -67,7 +67,7 @@ void CNSGAIII::Solve(CPopulation *solutions, const BProblem &problem, bool impro
 	CSimulatedBinaryCrossover SBX(pc_, eta_c_);
 	CPolynomialMutation PolyMut(1.0/problem.num_variables(), eta_m_);
 
-	Gnuplot gplot;
+//	Gnuplot gplot;
 
 	int cur = 0, next = 1;
 	RandomInitialization(&pop[cur], problem);

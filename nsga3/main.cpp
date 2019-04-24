@@ -115,7 +115,7 @@ int main()
 			IGD_results << igd_value << endl;
 
 			// --- Visualization (Show the last 3 dimensions. You need gnuplot.)
-			ShowPopulation(gplot, solutions, "gnuplot-show"); //system("pause");
+//			ShowPopulation(gplot, solutions, "gnuplot-show"); //system("pause");
 		}
 		delete problem;
 
