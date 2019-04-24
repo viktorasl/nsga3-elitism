@@ -14,8 +14,8 @@
 class Gnuplot
 {
 public:
-    Gnuplot() ;
-    ~Gnuplot();
+	Gnuplot() ;
+	~Gnuplot();
 	
 	// prohibit copying (VS2012 does not support 'delete')	
 	Gnuplot(const Gnuplot &);
@@ -32,5 +32,5 @@ public:
 	void splot(const std::string &fname, std::size_t x, std::size_t y, std::size_t z);
 
 protected:
-    FILE *gnuplotpipe;
+	FILE *gnuplotpipe;
 };

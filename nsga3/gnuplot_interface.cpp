@@ -23,12 +23,12 @@ Gnuplot::Gnuplot():gnuplotpipe(0)
 // because I choose the terminal to output files so I don't want to see the window
 
 #ifndef DO_NOT_HAVE_GNUPLOT
-    gnuplotpipe=_popen("gnuplot","w");
+	gnuplotpipe=_popen("gnuplot","w");
 
-    if (!gnuplotpipe)
-    {
-        cerr << ("Gnuplot not found !");
-    }
+	if (!gnuplotpipe)
+	{
+		cerr << ("Gnuplot not found !");
+	}
 #endif
 }
 // ---------------------------------------------------------
@@ -36,9 +36,9 @@ Gnuplot::~Gnuplot()
 {
 	if (!gnuplotpipe) return;
 
-    fprintf(gnuplotpipe,"exit\n");
+	fprintf(gnuplotpipe,"exit\n");
 #ifndef DO_NOT_HAVE_GNUPLOT
-    _pclose(gnuplotpipe);
+	_pclose(gnuplotpipe);
 #endif
 }
 // ---------------------------------------------------------
@@ -46,8 +46,8 @@ void Gnuplot::operator()(const string & command)
 {
 	if (!gnuplotpipe) return;
 
-    fprintf(gnuplotpipe,"%s\n",command.c_str());
-    fflush(gnuplotpipe);
+	fprintf(gnuplotpipe,"%s\n",command.c_str());
+	fflush(gnuplotpipe);
 // flush is necessary, nothing gets plotted else
 }
 // ---------------------------------------------------------

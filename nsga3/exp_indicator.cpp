@@ -51,26 +51,26 @@ TFront & LoadFront(TFront &front, const std::string &infname) // return the numb
 // ---------------------------------------------------------------------
 double EuclideanDistance(const CObjectiveVector &l, const CObjectiveVector &r)
 {
-    double sum = 0;
-    for (size_t i=0; i<l.size(); i+=1)
-    {
-        sum += pow(l[i]-r[i],2);
-    }
-    return sqrt(sum);
+	double sum = 0;
+	for (size_t i=0; i<l.size(); i+=1)
+	{
+		sum += pow(l[i]-r[i],2);
+	}
+	return sqrt(sum);
 }
 // ---------------------------------------------------------------------
 double IGD(const TFront &PF, const TFront &approximation)
 {
-    double sum = 0;
-    for (size_t p=0; p<PF.size(); p+=1)
-    {
-        double min_dist = numeric_limits<double>::max();
-        for (size_t a=0; a<approximation.size(); a+=1)
-        {
+	double sum = 0;
+	for (size_t p=0; p<PF.size(); p+=1)
+	{
+		double min_dist = numeric_limits<double>::max();
+		for (size_t a=0; a<approximation.size(); a+=1)
+		{
 			min_dist = min(min_dist, EuclideanDistance(PF[p], approximation[a]));
-        }
-        sum += min_dist;
-    }
-    return PF.size()>0?sum/PF.size():-1;
+		}
+		sum += min_dist;
+	}
+	return PF.size()>0?sum/PF.size():-1;
 }
 // ---------------------------------------------------------------------

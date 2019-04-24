@@ -56,33 +56,33 @@ void GuassianElimination(vector<double> *px, vector< vector<double> > A, const v
 {
 	vector<double> &x = *px;
 
-    const size_t N = A.size();
-    for (size_t i=0; i<N; i+=1)
-    {
-        A[i].push_back(b[i]);
-    }
+	const size_t N = A.size();
+	for (size_t i=0; i<N; i+=1)
+	{
+		A[i].push_back(b[i]);
+	}
 
-    for (size_t base=0; base<N-1; base+=1)
-    {
-        for (size_t target=base+1; target<N; target+=1)
-        {
-            double ratio = A[target][base]/A[base][base];
-            for (size_t term=0; term<A[base].size(); term+=1)
-            {
-                A[target][term] -= A[base][term]*ratio;
-            }
-        }
-    }
+	for (size_t base=0; base<N-1; base+=1)
+	{
+		for (size_t target=base+1; target<N; target+=1)
+		{
+			double ratio = A[target][base]/A[base][base];
+			for (size_t term=0; term<A[base].size(); term+=1)
+			{
+				A[target][term] -= A[base][term]*ratio;
+			}
+		}
+	}
 
-    x.resize(N);
-    for (int i=N-1; i>=0; i-=1)
-    {
-        for (size_t known=i+1; known<N; known+=1)
-        {
-            A[i][N] -= A[i][known]*x[known];
-        }
-        x[i] = A[i][N]/A[i][i];
-    }
+	x.resize(N);
+	for (int i=N-1; i>=0; i-=1)
+	{
+		for (size_t known=i+1; known<N; known+=1)
+		{
+			A[i][N] -= A[i][known]*x[known];
+		}
+		x[i] = A[i][N]/A[i][i];
+	}
 }
 
 
@@ -106,20 +106,20 @@ void GuassianElimination(vector<double> *px, vector< vector<double> > A, const v
 // ---------------------------------------------------------------------
 double PerpendicularDistance(const vector<double> &direction, const vector<double> &point)
 {
-    double numerator = 0, denominator = 0;
-    for (size_t i=0; i<direction.size(); i+=1)
-    {
-        numerator += direction[i]*point[i];
-        denominator += square(direction[i]);
-    }
-    double k = numerator/denominator;
+	double numerator = 0, denominator = 0;
+	for (size_t i=0; i<direction.size(); i+=1)
+	{
+		numerator += direction[i]*point[i];
+		denominator += square(direction[i]);
+	}
+	double k = numerator/denominator;
 
-    double d = 0;
-    for (size_t i=0; i<direction.size(); i+=1)
-    {
-        d += square(k*direction[i] - point[i]);
-    }
-    return sqrt(d);
+	double d = 0;
+	for (size_t i=0; i<direction.size(); i+=1)
+	{
+		d += square(k*direction[i] - point[i]);
+	}
+	return sqrt(d);
 }
 // ---------------------------------------------------------------------
 

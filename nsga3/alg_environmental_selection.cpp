@@ -315,16 +315,16 @@ void EnvironmentalSelection(size_t t, CPopulation *pnext, CPopulation *pcur, vec
 	// ---------- Steps 9-10 in Algorithm 1 ----------
 	if (next.size() == PopSize) return;
 
-    // ---------- Step 14 / Algorithm 2 ----------
-    vector<double> ideal_point = TranslateObjectives(&cur, fronts);
+	// ---------- Step 14 / Algorithm 2 ----------
+	vector<double> ideal_point = TranslateObjectives(&cur, fronts);
 
-    vector<size_t> extreme_points;
-    FindExtremePoints(&extreme_points, cur, fronts);
+	vector<size_t> extreme_points;
+	FindExtremePoints(&extreme_points, cur, fronts);
 
-    vector<double> intercepts;
-    ConstructHyperplane(&intercepts, cur, extreme_points);
+	vector<double> intercepts;
+	ConstructHyperplane(&intercepts, cur, extreme_points);
 
-    NormalizeObjectives(&cur, fronts, intercepts, ideal_point);
+	NormalizeObjectives(&cur, fronts, intercepts, ideal_point);
 
 	// ---------- Step 15 / Algorithm 3, Step 16 ----------
 	Associate(&rps, cur, fronts);
